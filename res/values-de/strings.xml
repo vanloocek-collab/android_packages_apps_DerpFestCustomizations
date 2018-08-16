@@ -242,6 +242,10 @@
     <string name="charging_animation_style_glow">Leuchtpuls</string>
     <string name="charging_animation_style_battery">Batteriefüllung</string>
 
+    <!-- Lockscreen battery info indicator -->
+    <string name="lockscreen_battery_info_title">Ladeinfo auf dem Sperrbildschirm</string>
+    <string name="lockscreen_battery_info_summary">Ladestrom, Spannung und Akkutemperatur beim Laden auf dem Sperrbildschirm anzeigen</string>
+
     <!-- Pulse music visualizer -->
     <string name="pulse_visualizer_category_title">Pulse-Visualisierung</string>
     <string name="pulse_settings_title">Visualisierung mit Pulse</string>

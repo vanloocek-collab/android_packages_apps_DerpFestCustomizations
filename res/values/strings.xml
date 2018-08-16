@@ -220,6 +220,10 @@
     <string name="charging_animation_style_glow">Glow pulse</string>
     <string name="charging_animation_style_battery">Battery fill</string>
 
+    <!-- Lockscreen battery info indicator -->
+    <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
+    <string name="lockscreen_battery_info_summary">Show charger current, voltage, and battery temperature on the lockscreen while charging</string>
+
     <!-- Pulse music visualizer -->
     <string name="pulse_visualizer_category_title">Pulse visualizer</string>
     <string name="pulse_settings_title">Pulse Visualizer</string>

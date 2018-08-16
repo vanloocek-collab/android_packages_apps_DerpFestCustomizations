@@ -215,6 +215,10 @@
     <string name="charging_animation_style_glow">脉冲发光</string>
     <string name="charging_animation_style_battery">电池填充</string>
 
+    <!-- Lockscreen battery info indicator -->
+    <string name="lockscreen_battery_info_title">锁屏充电信息</string>
+    <string name="lockscreen_battery_info_summary">充电时在锁屏上显示充电器电流、电压和电池温度</string>
+
     <!-- Pulse music visualizer -->
     <string name="pulse_visualizer_category_title">脉冲音乐可视化</string>
     <string name="pulse_settings_title">脉冲可视化</string>
