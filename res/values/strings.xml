@@ -43,7 +43,7 @@
     <string name="volume_slider_gradient_title">Volume slider gradient</string>
     <string name="volume_slider_gradient_summary">Show gradient styling on the volume slider in the volume dialog</string>
     <string name="qs_chip_gradient_enabled_title">Gradient status chip</string>
-    <string name="qs_chip_gradient_enabled_summary">Enable gradient styling for the signal and battery chip in Quick Settings</string>
+    <string name="qs_chip_gradient_enabled_summary">Enable gradient styling for the signal and battery chip in Separate Quick Settings</string>
 
     <!-- Categories -->
     <string name="general_category_title">General</string>

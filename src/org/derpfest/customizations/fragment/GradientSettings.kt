@@ -5,6 +5,7 @@
 
 package org.derpfest.customizations.fragment
 
+import android.database.ContentObserver
 import android.provider.Settings
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent
 import android.os.Bundle
@@ -17,18 +18,40 @@ import com.android.settings.SettingsPreferenceFragment
 class GradientSettings : SettingsPreferenceFragment(), OnPreferenceChangeListener {
 
     private var gradientColorsCategory: PreferenceCategory? = null
+    private var chipGradientPreference: Preference? = null
+    private var dualShadeObserver: ContentObserver? = null
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         addPreferencesFromResource(R.xml.gradient_settings)
         gradientColorsCategory = findPreference("gradient_colors_category")
+        chipGradientPreference = findPreference("qs_chip_gradient_enabled")
         findPreference<Preference>("qs_tile_gradient_enabled")?.setOnPreferenceChangeListener(this)
         findPreference<Preference>("qs_brightness_gradient_enabled")?.setOnPreferenceChangeListener(this)
         findPreference<Preference>("qs_volume_gradient_enabled")?.setOnPreferenceChangeListener(this)
-        findPreference<Preference>("qs_chip_gradient_enabled")?.setOnPreferenceChangeListener(this)
+        chipGradientPreference?.setOnPreferenceChangeListener(this)
+        applyChipToggleVisibility()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        dualShadeObserver =
+            QsShadePanels.registerDualShadeObserver(requireContext().contentResolver) {
+                applyChipToggleVisibility()
+                updateColorPickersAvailability()
+            }
+        applyChipToggleVisibility()
+        updateColorPickersAvailability()
+    }
+
+    override fun onStop() {
+        dualShadeObserver?.let { requireContext().contentResolver.unregisterContentObserver(it) }
+        dualShadeObserver = null
+        super.onStop()
     }
 
     override fun onResume() {
         super.onResume()
+        applyChipToggleVisibility()
         updateColorPickersAvailability()
     }
 
@@ -37,13 +60,22 @@ class GradientSettings : SettingsPreferenceFragment(), OnPreferenceChangeListene
         return true
     }
 
-    /** True when at least one of the gradient toggles is enabled. */
+    private fun isChipGradientAvailable(): Boolean =
+        QsShadePanels.isDualShadeEnabled(requireContext())
+
+    private fun applyChipToggleVisibility() {
+        chipGradientPreference?.isVisible = isChipGradientAvailable()
+    }
+
+    /** True when at least one visible gradient toggle is enabled. */
     private fun isAnyGradientEnabled(): Boolean {
         val cr = requireContext().contentResolver
         val tile = Settings.System.getInt(cr, "qs_tile_gradient_enabled", 1) != 0
         val brightness = Settings.System.getInt(cr, "qs_brightness_gradient_enabled", 1) != 0
         val volume = Settings.System.getInt(cr, "qs_volume_gradient_enabled", 1) != 0
-        val chip = Settings.System.getInt(cr, "qs_chip_gradient_enabled", 1) != 0
+        val chip =
+            isChipGradientAvailable() &&
+                Settings.System.getInt(cr, "qs_chip_gradient_enabled", 1) != 0
         return tile || brightness || volume || chip
     }
 
@@ -70,7 +102,7 @@ class GradientSettings : SettingsPreferenceFragment(), OnPreferenceChangeListene
         } else {
             Settings.System.getInt(cr, "qs_volume_gradient_enabled", 1) != 0
         }
-        val chip = if (changedKey == "qs_chip_gradient_enabled") {
+        val chip = isChipGradientAvailable() && if (changedKey == "qs_chip_gradient_enabled") {
             newValue as? Boolean ?: (Settings.System.getInt(cr, "qs_chip_gradient_enabled", 1) != 0)
         } else {
             Settings.System.getInt(cr, "qs_chip_gradient_enabled", 1) != 0

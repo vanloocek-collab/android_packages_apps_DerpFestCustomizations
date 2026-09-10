@@ -41,7 +41,7 @@
     <string name="volume_slider_gradient_title">音量滑块渐变</string>
     <string name="volume_slider_gradient_summary">在音量面板的音量滑块上显示渐变样式</string>
     <string name="qs_chip_gradient_enabled_title">状态芯片渐变</string>
-    <string name="qs_chip_gradient_enabled_summary">为快速设置中的信号和电池芯片启用渐变样式</string>
+    <string name="qs_chip_gradient_enabled_summary">在分离的快速设置中为信号和电池芯片启用渐变样式</string>
 
     <!-- Categories -->
     <string name="general_category_title">通用</string>
