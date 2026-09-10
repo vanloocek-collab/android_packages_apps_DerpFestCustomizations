@@ -342,7 +342,7 @@ public class QsTileIconShapePreference extends Preference {
         private final int mStrokeColor;
         /** 0 = no fill (stroke-only or solid fill preview). */
         private final int mBackdropArgb;
-        /** When true, draw low-alpha vertical gradient wash (QS gradient on). */
+        /** When true, draw low-alpha QS gradient wash (left → right, matching SystemUI). */
         private final boolean mOutlineDarkGradientWash;
         private final int mGradientStartArgb;
         private final int mGradientEndArgb;
@@ -396,13 +396,13 @@ public class QsTileIconShapePreference extends Preference {
             canvas.scale(sx, sy);
             if (mOutlineDarkGradientWash) {
                 mPaint.setStyle(Paint.Style.FILL);
-                // Align with Compose Brush.linearGradient(colors): top-left → bottom-right in tile.
+                // Align with SystemUI qsGradientBrush: start on the left, end on the right.
                 Shader shader =
                         new LinearGradient(
                                 0,
                                 0,
                                 mViewBox,
-                                mViewBox,
+                                0,
                                 mGradientStartArgb,
                                 mGradientEndArgb,
                                 Shader.TileMode.CLAMP);
