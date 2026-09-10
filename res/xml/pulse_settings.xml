@@ -21,13 +21,6 @@
         android:defaultValue="true"
         android:dependency="lockscreen_pulse_enabled" />
 
-    <org.derpfest.support.preferences.SecureSettingSwitchPreference
-        android:key="pulse_qs_enabled"
-        android:title="@string/pulse_qs_title"
-        android:summary="@string/pulse_qs_summary"
-        android:defaultValue="false"
-        android:dependency="lockscreen_pulse_enabled" />
-
     <org.derpfest.support.preferences.SecureSettingListPreference
         android:key="pulse_haptics_enabled"
         android:title="@string/pulse_haptics_title"
@@ -46,13 +39,6 @@
         android:entries="@array/pulse_renderer_entries"
         android:entryValues="@array/pulse_renderer_values"
         android:defaultValue="solid"
-        android:dependency="lockscreen_pulse_enabled" />
-
-    <org.derpfest.support.preferences.SecureSettingSwitchPreference
-        android:key="pulse_smoothing_enabled"
-        android:title="@string/pulse_smoothing_enabled_title"
-        android:summary="@string/pulse_smoothing_enabled_summary"
-        android:defaultValue="false"
         android:dependency="lockscreen_pulse_enabled" />
 
     <org.derpfest.support.preferences.SecureSettingSwitchPreference

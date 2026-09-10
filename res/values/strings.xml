@@ -243,8 +243,6 @@
     <string name="pulse_renderer_particle">Particle system</string>
     <string name="pulse_renderer_waveform">Waveform</string>
     <string name="pulse_renderer_dot_wave">Dot wave</string>
-    <string name="pulse_smoothing_enabled_title">Smooth particle spawn</string>
-    <string name="pulse_smoothing_enabled_summary">Use a higher particle spawn rate when using the particle visualizer style</string>
 
     <!-- Units -->
     <string name="unit_milliseconds">ms</string>
@@ -256,8 +254,6 @@
 
     <!-- QS Panel -->
     <string name="qs_appearance_category_title">Appearance</string>
-    <string name="pulse_qs_title">Show pulse on QS panel</string>
-    <string name="pulse_qs_summary">Show pulse visualizer on QS panel</string>
     <string name="pulse_haptics_title">Bass haptics</string>
     <string name="pulse_haptics_off">No subtle vibration on sharp bass spikes</string>
     <string name="pulse_haptics_while_visualizer">Only when pulse is showing</string>

@@ -267,8 +267,6 @@
     <string name="pulse_renderer_matrix">Matrix</string>
     <string name="pulse_renderer_particle">Partikelsystem</string>
     <string name="pulse_renderer_waveform">Wellenform</string>
-    <string name="pulse_smoothing_enabled_title">Sanftere Partikelerzeugung</string>
-    <string name="pulse_smoothing_enabled_summary">Höhere Partikel-Erzeugungsrate für den Partikel-Stil</string>
 
     <!-- Units -->
     <string name="unit_milliseconds">ms</string>
@@ -408,8 +406,6 @@
     <string name="lockscreen_show_lunar_calendar_summary">Mondkalender im Sperrbildschirm-Datum anzeigen</string>
 
     <string name="qs_appearance_category_title">Darstellung</string>
-    <string name="pulse_qs_title">Pulse im QS-Panel anzeigen</string>
-    <string name="pulse_qs_summary">Pulse-Visualisierung im Schnelleinstellungen-Panel anzeigen</string>
     <string name="pulse_haptics_title">Bass-Haptik</string>
     <string name="pulse_haptics_off">Keine dezente Vibration bei starken Bass-Spitzen</string>
     <string name="pulse_haptics_while_visualizer">Nur wenn Pulse angezeigt wird</string>

@@ -240,8 +240,6 @@
     <string name="pulse_renderer_matrix">矩阵</string>
     <string name="pulse_renderer_particle">粒子系统</string>
     <string name="pulse_renderer_waveform">波形</string>
-    <string name="pulse_smoothing_enabled_title">平滑粒子生成</string>
-    <string name="pulse_smoothing_enabled_summary">使用粒子可视化样式时提高粒子生成速率</string>
 
     <!-- Units -->
     <string name="unit_milliseconds">ms</string>
@@ -257,8 +255,6 @@
 
     <!-- QS Panel -->
     <string name="qs_appearance_category_title">外观</string>
-    <string name="pulse_qs_title">在快速设置面板显示脉冲</string>
-    <string name="pulse_qs_summary">在快速设置面板显示脉冲可视化效果</string>
     <string name="pulse_haptics_title">低音触觉反馈</string>
     <string name="pulse_haptics_off">关闭（强低音时无轻微振动）</string>
     <string name="pulse_haptics_while_visualizer">仅在显示脉冲时</string>
