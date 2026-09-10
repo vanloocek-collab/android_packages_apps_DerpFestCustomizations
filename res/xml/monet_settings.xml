@@ -47,8 +47,7 @@
     <Preference
         android:key="wallpaper_color"
         android:title="@string/monet_engine_wallpaper_color_title"
-        android:summary="@string/monet_engine_wallpaper_color_summary"
-        android:dependency="color_source" />
+        android:summary="@string/monet_engine_wallpaper_color_summary" />
 
     <SwitchPreferenceCompat
         android:key="accent_background"

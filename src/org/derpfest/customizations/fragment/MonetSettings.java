@@ -129,11 +129,6 @@ public class MonetSettings extends SettingsPreferenceFragment implements
         mWallpaperColorPref = findPreference(PREF_WALLPAPER_COLOR);
         mSharedPreferences = getActivity().getSharedPreferences(TAG, Context.MODE_PRIVATE);
 
-        mWallpaperColorPref.setEnabled(!WallpaperUtils.isLiveWall(getContext()));
-        mWallpaperColorPref.setSummary(WallpaperUtils.isLiveWall(getContext()) ?
-            R.string.monet_engine_wallpaper_color_not_available :
-            R.string.monet_engine_wallpaper_color_summary);
-
         updatePreferences();
         setupWallpaperColorPicker();
 
@@ -331,11 +326,27 @@ public class MonetSettings extends SettingsPreferenceFragment implements
     }
 
     private void updateAccentEnablement(String source) {
-        final boolean shouldEnable = source != null && source.equals(COLOR_SOURCE_PRESET);
-        mAccentColorPref.setEnabled(shouldEnable);
-        mAccentBackgroundPref.setEnabled(shouldEnable);
+        final boolean isPreset = source != null && source.equals(COLOR_SOURCE_PRESET);
+        mAccentColorPref.setEnabled(isPreset);
+        mAccentBackgroundPref.setEnabled(isPreset);
+        updateWallpaperColorPickerAvailability(isPreset);
         setColorValue();
         setBgColorValue();
+    }
+
+    private void updateWallpaperColorPickerAvailability(boolean isPreset) {
+        if (mWallpaperColorPref == null) {
+            return;
+        }
+        final boolean liveWallpaper = WallpaperUtils.isLiveWall(getContext());
+        mWallpaperColorPref.setEnabled(isPreset && !liveWallpaper);
+        if (!isPreset) {
+            mWallpaperColorPref.setSummary(R.string.monet_engine_wallpaper_color_requires_preset);
+        } else if (liveWallpaper) {
+            mWallpaperColorPref.setSummary(R.string.monet_engine_wallpaper_color_not_available);
+        } else {
+            mWallpaperColorPref.setSummary(R.string.monet_engine_wallpaper_color_summary);
+        }
     }
 
     private JSONObject getSettingsJson() throws JSONException {

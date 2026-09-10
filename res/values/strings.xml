@@ -91,7 +91,8 @@
     <string name="monet_engine_color_source_preset">Preset</string>
     <string name="monet_engine_wallpaper_color_title">Select a different accent color from your wallpaper</string>
     <string name="monet_engine_wallpaper_color_summary">Wallpaper color selector</string>
-    <string name="monet_engine_wallpaper_color_not_available">Not available</string>
+    <string name="monet_engine_wallpaper_color_not_available">Not available with a live wallpaper</string>
+    <string name="monet_engine_wallpaper_color_requires_preset">Set color source to Preset to pick from your wallpaper</string>
 
     <!-- Keybox Data -->
     <string name="keybox_data_title">Keybox attestation override</string>
