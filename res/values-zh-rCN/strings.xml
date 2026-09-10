@@ -31,7 +31,7 @@
 
     <!-- Gradients -->
     <string name="gradients_title">渐变色</string>
-    <string name="gradients_summary">自定义磁贴、亮度滑块和音量滑块的渐变颜色</string>
+    <string name="gradients_summary">自定义磁贴、滑块和快速设置状态芯片的渐变颜色</string>
     <string name="gradient_toggles_category_title">渐变色开关</string>
     <string name="gradient_colors_category_title">自定义颜色</string>
     <string name="gradient_start_color_title">渐变起始色</string>
@@ -40,6 +40,8 @@
     <string name="gradient_end_color_summary">设置为 0 或重置以使用默认值。在启用上方任意渐变选项时生效。</string>
     <string name="volume_slider_gradient_title">音量滑块渐变</string>
     <string name="volume_slider_gradient_summary">在音量面板的音量滑块上显示渐变样式</string>
+    <string name="qs_chip_gradient_enabled_title">状态芯片渐变</string>
+    <string name="qs_chip_gradient_enabled_summary">为快速设置中的信号和电池芯片启用渐变样式</string>
 
     <!-- Categories -->
     <string name="general_category_title">通用</string>

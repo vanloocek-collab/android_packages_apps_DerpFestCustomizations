@@ -24,6 +24,7 @@ class GradientSettings : SettingsPreferenceFragment(), OnPreferenceChangeListene
         findPreference<Preference>("qs_tile_gradient_enabled")?.setOnPreferenceChangeListener(this)
         findPreference<Preference>("qs_brightness_gradient_enabled")?.setOnPreferenceChangeListener(this)
         findPreference<Preference>("qs_volume_gradient_enabled")?.setOnPreferenceChangeListener(this)
+        findPreference<Preference>("qs_chip_gradient_enabled")?.setOnPreferenceChangeListener(this)
     }
 
     override fun onResume() {
@@ -36,13 +37,14 @@ class GradientSettings : SettingsPreferenceFragment(), OnPreferenceChangeListene
         return true
     }
 
-    /** True when at least one of the three gradient toggles is enabled. */
+    /** True when at least one of the gradient toggles is enabled. */
     private fun isAnyGradientEnabled(): Boolean {
         val cr = requireContext().contentResolver
         val tile = Settings.System.getInt(cr, "qs_tile_gradient_enabled", 1) != 0
         val brightness = Settings.System.getInt(cr, "qs_brightness_gradient_enabled", 1) != 0
         val volume = Settings.System.getInt(cr, "qs_volume_gradient_enabled", 1) != 0
-        return tile || brightness || volume
+        val chip = Settings.System.getInt(cr, "qs_chip_gradient_enabled", 1) != 0
+        return tile || brightness || volume || chip
     }
 
     /**
@@ -68,7 +70,12 @@ class GradientSettings : SettingsPreferenceFragment(), OnPreferenceChangeListene
         } else {
             Settings.System.getInt(cr, "qs_volume_gradient_enabled", 1) != 0
         }
-        gradientColorsCategory?.isEnabled = tile || brightness || volume
+        val chip = if (changedKey == "qs_chip_gradient_enabled") {
+            newValue as? Boolean ?: (Settings.System.getInt(cr, "qs_chip_gradient_enabled", 1) != 0)
+        } else {
+            Settings.System.getInt(cr, "qs_chip_gradient_enabled", 1) != 0
+        }
+        gradientColorsCategory?.isEnabled = tile || brightness || volume || chip
     }
 
     override fun getMetricsCategory(): Int = MetricsEvent.DERPFEST
