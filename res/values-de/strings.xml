@@ -245,7 +245,7 @@
     <!-- Pulse music visualizer -->
     <string name="pulse_visualizer_category_title">Pulse-Visualisierung</string>
     <string name="pulse_settings_title">Visualisierung mit Pulse</string>
-    <string name="pulse_settings_summary">Visualisiert Audio in Navigationsleiste und auf Sperrbildschirm</string>
+    <string name="pulse_settings_summary">Musikvisualisierung auf Sperrbildschirm und Ambient Display anzeigen</string>
     <string name="ambient_pulse_enabled_title">Ambient Pulse</string>
     <string name="ambient_pulse_enabled_summary">Visualisierung im Inaktivitätsdisplay zeigen</string>
     <string name="pulse_rounded_bars_title">Abgerundete Balken</string>

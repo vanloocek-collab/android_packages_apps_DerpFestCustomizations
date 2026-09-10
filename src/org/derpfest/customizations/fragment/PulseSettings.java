@@ -62,7 +62,7 @@ public class PulseSettings extends SettingsPreferenceFragment implements
     }
 
     /**
-     * Rounding is only applied by SolidLine and Waveform in SystemUI.
+     * Rounding is only visibly applied by SolidLine in SystemUI.
      * Retro VU uses hardcoded segment colors and ignores pulse_color.
      * Particle does not draw bars, so bar count has no visible effect.
      */
@@ -71,8 +71,7 @@ public class PulseSettings extends SettingsPreferenceFragment implements
             return;
         }
 
-        boolean supportsRounding = "solid".equals(rendererValue)
-                || "waveform".equals(rendererValue);
+        boolean supportsRounding = "solid".equals(rendererValue);
         boolean supportsColoring = !"retro".equals(rendererValue);
         boolean supportsBarCount = !"particle".equals(rendererValue);
 

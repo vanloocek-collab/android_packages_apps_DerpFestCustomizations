@@ -218,7 +218,7 @@
     <!-- Pulse music visualizer -->
     <string name="pulse_visualizer_category_title">脉冲音乐可视化</string>
     <string name="pulse_settings_title">脉冲可视化</string>
-    <string name="pulse_settings_summary">播放音乐时在锁屏上显示条形可视化效果</string>
+    <string name="pulse_settings_summary">在锁屏和 Ambient Display 上显示音乐可视化效果</string>
     <string name="ambient_pulse_enabled_title">息屏脉冲</string>
     <string name="ambient_pulse_enabled_summary">在息屏显示上展示可视化效果</string>
     <string name="pulse_rounded_bars_title">圆角条形</string>
