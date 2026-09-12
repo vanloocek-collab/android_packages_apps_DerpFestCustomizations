@@ -47,21 +47,44 @@ public class WallpaperUtils {
         });
     }
 
-    public static Drawable getWall(Context context, boolean z) {
+    private static final int MAX_WALLPAPER_PREVIEW_EDGE = 1440;
+
+    public static Drawable getWall(Context context, boolean lockScreen) {
         WallpaperManager instance = WallpaperManager.getInstance(context);
-        ParcelFileDescriptor wallpaperFile = instance.getWallpaperFile(z ? 2 : 1);
+        ParcelFileDescriptor wallpaperFile = instance.getWallpaperFile(
+                lockScreen ? WallpaperManager.FLAG_LOCK : WallpaperManager.FLAG_SYSTEM);
         if (wallpaperFile == null) {
             return instance.getDrawable();
         }
-        Bitmap createScaledBitmap = Bitmap.createScaledBitmap(
-            BitmapFactory.decodeFileDescriptor(wallpaperFile.getFileDescriptor()), 
-            1080, 1080, true);
         try {
-            wallpaperFile.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+            Bitmap decoded = BitmapFactory.decodeFileDescriptor(wallpaperFile.getFileDescriptor());
+            if (decoded == null) {
+                return instance.getDrawable();
+            }
+            Bitmap preview = scalePreservingAspect(decoded);
+            if (preview != decoded) {
+                decoded.recycle();
+            }
+            return new BitmapDrawable(context.getResources(), preview);
+        } finally {
+            try {
+                wallpaperFile.close();
+            } catch (Exception ignored) {
+            }
         }
-        return new BitmapDrawable(context.getResources(), createScaledBitmap);
+    }
+
+    private static Bitmap scalePreservingAspect(Bitmap source) {
+        int width = source.getWidth();
+        int height = source.getHeight();
+        int longest = Math.max(width, height);
+        if (longest <= MAX_WALLPAPER_PREVIEW_EDGE) {
+            return source;
+        }
+        float scale = MAX_WALLPAPER_PREVIEW_EDGE / (float) longest;
+        int scaledWidth = Math.max(1, Math.round(width * scale));
+        int scaledHeight = Math.max(1, Math.round(height * scale));
+        return Bitmap.createScaledBitmap(source, scaledWidth, scaledHeight, true);
     }
 
     public static boolean isLiveWall(Context context) {
