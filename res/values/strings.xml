@@ -289,6 +289,7 @@
 
     <!-- QS panel style (Settings.Secure qs_panel_style; SystemUI) -->
     <string name="qs_panel_style_title">QS panel style</string>
+    <string name="qs_panel_style_summary">Choose the visual style for your Quick Settings panel</string>
     <string name="qs_panel_style_card">Card</string>
     <string name="qs_panel_style_circular">Circular</string>
     <string name="qs_tile_label_hide_title">Hide tile labels</string>

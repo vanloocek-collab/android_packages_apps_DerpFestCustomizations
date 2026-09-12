@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/settingslib_expressive_space_extrasmall4"
+    android:paddingBottom="@dimen/settingslib_expressive_space_extrasmall6">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="?android:attr/listPreferredItemPaddingStart"
+        android:layout_marginEnd="?android:attr/listPreferredItemPaddingEnd"
+        android:background="@drawable/qs_panel_style_preview_clip"
+        android:clipToOutline="true">
+
+        <org.derpfest.customizations.preference.QsPanelStyleBlurBackground
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/qs_panel_style_preview_scrim" />
+
+        <org.derpfest.customizations.preference.QsPanelStylePreviewView
+            android:id="@+id/qs_panel_style_preview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qs_panel_style_preview_height"
+            android:layout_margin="@dimen/qs_panel_style_card_padding"
+            android:importantForAccessibility="no" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="?android:attr/listPreferredItemPaddingStart"
+        android:layout_marginEnd="?android:attr/listPreferredItemPaddingEnd"
+        android:layout_marginTop="@dimen/qs_panel_style_card_gap"
+        android:background="@drawable/qs_panel_style_surface_card"
+        android:orientation="vertical"
+        android:padding="@dimen/qs_panel_style_card_padding">
+
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:hyphenationFrequency="normalFast"
+            android:lineBreakWordStyle="phrase"
+            android:maxLines="2"
+            android:textAppearance="?android:attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@android:id/summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settingslib_expressive_space_extrasmall2"
+            android:hyphenationFrequency="normalFast"
+            android:lineBreakWordStyle="phrase"
+            android:textAppearance="?android:attr/textAppearanceListItemSecondary" />
+
+        <org.derpfest.customizations.preference.QsPanelStyleSegmentedToolbar
+            android:id="@+id/qs_style_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/settingslib_expressive_space_small1"
+            android:background="@drawable/qs_panel_style_toolbar_background"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/qs_panel_style_toolbar_padding_horizontal"
+            android:paddingVertical="@dimen/qs_panel_style_toolbar_padding_vertical">
+
+            <FrameLayout
+                android:id="@+id/qs_style_card_hit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:minHeight="48dp">
+
+                <LinearLayout
+                    android:id="@+id/qs_style_card_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/qs_panel_style_button_height"
+                    android:layout_gravity="center"
+                    android:background="@drawable/qs_panel_style_toolbar_thumb"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <ImageView
+                        android:id="@+id/qs_style_card_icon"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/qs_panel_style_tab_icon_size"
+                        android:layout_marginEnd="@dimen/qs_panel_style_tab_icon_margin"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_qs_style_tab_card"
+                        android:tint="@color/qs_panel_style_button_content" />
+
+                    <TextView
+                        android:id="@+id/qs_style_card_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/qs_panel_style_card"
+                        android:textAppearance="@style/TextAppearance.SettingsLib.LabelLarge"
+                        android:textColor="@color/qs_panel_style_button_content" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/qs_style_circular_hit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/qs_panel_style_tab_spacing"
+                android:clickable="true"
+                android:focusable="true"
+                android:minHeight="48dp">
+
+                <LinearLayout
+                    android:id="@+id/qs_style_circular_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/qs_panel_style_button_height"
+                    android:layout_gravity="center"
+                    android:background="@drawable/qs_panel_style_toolbar_thumb"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <ImageView
+                        android:id="@+id/qs_style_circular_icon"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/qs_panel_style_tab_icon_size"
+                        android:layout_marginEnd="@dimen/qs_panel_style_tab_icon_margin"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_qs_style_tab_circular"
+                        android:tint="@color/qs_panel_style_button_content" />
+
+                    <TextView
+                        android:id="@+id/qs_style_circular_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/qs_panel_style_circular"
+                        android:textAppearance="@style/TextAppearance.SettingsLib.LabelLarge"
+                        android:textColor="@color/qs_panel_style_button_content" />
+                </LinearLayout>
+            </FrameLayout>
+        </org.derpfest.customizations.preference.QsPanelStyleSegmentedToolbar>
+    </LinearLayout>
+</LinearLayout>

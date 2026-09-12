@@ -38,6 +38,21 @@
     <dimen name="edge_light_preview_shell_content_inset">6.0dip</dimen>
     <dimen name="edge_light_preview_shell_corner_radius">28.0dip</dimen>
 
+    <!-- QS panel style picker -->
+    <dimen name="qs_panel_style_button_height">40dp</dimen>
+    <dimen name="qs_panel_style_card_gap">12dp</dimen>
+    <dimen name="qs_panel_style_card_padding">20dp</dimen>
+    <dimen name="qs_panel_style_card_radius">20dp</dimen>
+    <dimen name="qs_panel_style_preview_height">220dp</dimen>
+    <dimen name="qs_panel_style_tab_icon_margin">8dp</dimen>
+    <dimen name="qs_panel_style_tab_icon_size">20dp</dimen>
+    <dimen name="qs_panel_style_tab_spacing">4dp</dimen>
+    <!-- ThemePicker floating toolbar: 12dp horizontal / 8dp vertical. The 48dp a11y
+         hit around the 40dp tab adds 4dp top and bottom, so the selected pill sits
+         in 12dp of space on every side. -->
+    <dimen name="qs_panel_style_toolbar_padding_horizontal">12dp</dimen>
+    <dimen name="qs_panel_style_toolbar_padding_vertical">8dp</dimen>
+
     <!-- Match SystemUI volume panel / slider surface blur -->
     <dimen name="dialog_surface_blur_radius">23dp</dimen>
     <dimen name="dialog_surface_corner_radius">30dp</dimen>
