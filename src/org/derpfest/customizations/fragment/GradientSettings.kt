@@ -29,6 +29,8 @@ class GradientSettings : SettingsPreferenceFragment(), OnPreferenceChangeListene
         gradientColorsCategory = findPreference("gradient_colors_category")
         startColorPref = findPreference("gradient_start_color")
         endColorPref = findPreference("gradient_end_color")
+        startColorPref?.setAutoSummaryEnabled(false)
+        endColorPref?.setAutoSummaryEnabled(false)
         chipGradientPreference = findPreference("qs_chip_gradient_enabled")
         findPreference<Preference>("qs_tile_gradient_enabled")?.setOnPreferenceChangeListener(this)
         findPreference<Preference>("qs_brightness_gradient_enabled")?.setOnPreferenceChangeListener(this)

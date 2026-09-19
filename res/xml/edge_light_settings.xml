@@ -68,7 +68,7 @@
         android:defaultValue="none"
         android:dependency="edge_light_enabled" />
 
-    <org.derpfest.support.colorpicker.ColorPickerSystemPreference
+    <org.derpfest.customizations.widget.HsvColorPickerSystemPreference
         android:key="edge_light_custom_color"
         android:title="@string/edge_light_custom_color_title"
         android:defaultValue="-1"

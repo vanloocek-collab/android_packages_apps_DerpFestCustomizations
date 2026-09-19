@@ -16,18 +16,7 @@ class HsvColorPickerSystemPreference(
     attrs: AttributeSet?,
 ) : ColorPickerSystemPreference(context, attrs) {
 
-    init {
-        setAutoSummaryEnabled(false)
-    }
-
     override fun showDialog(state: Bundle?) {
-        val titleText = title ?: ""
-        HsvColorPickerDialog.show(
-            context,
-            displayColor,
-            titleText,
-            { color -> onColorChanged(color) },
-            /* alphaSlider */ false,
-        )
+        openHsvPicker(displayColor)
     }
 }

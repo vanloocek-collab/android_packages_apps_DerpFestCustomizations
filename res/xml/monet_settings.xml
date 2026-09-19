@@ -38,7 +38,7 @@
         android:entryValues="@array/monet_engine_color_source_values"
         android:defaultValue="both" />
 
-    <org.derpfest.support.colorpicker.ColorPickerPreference
+    <org.derpfest.customizations.widget.HsvColorPickerPreference
         android:key="accent_color"
         android:title="@string/monet_engine_custom_color_title"
         android:summary="@string/monet_engine_custom_color_summary"
@@ -55,7 +55,7 @@
         android:summary="@string/monet_engine_custom_bgcolor_summary"
         android:defaultValue="false" />
 
-    <org.derpfest.support.colorpicker.ColorPickerPreference
+    <org.derpfest.customizations.widget.HsvColorPickerPreference
         android:key="bg_color"
         android:title="@string/monet_engine_color_override_title"
         android:dependency="accent_background"
