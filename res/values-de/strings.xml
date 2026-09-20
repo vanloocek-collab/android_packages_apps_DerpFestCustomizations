@@ -649,6 +649,9 @@
     <string name="status_bar_dynamic_island_summary">Live-Aktivitäten, Steuerelemente und Updates an den Kameraausschnitt bringen</string>
     <string name="dynamic_island_width_title">Dynamic-Island-Breite</string>
     <string name="dynamic_island_width_summary">Horizontale Länge des Dynamic-Island-Chips anpassen</string>
+    <string name="dynamic_island_customization_title">Dynamic-Island-Anpassung</string>
+    <string name="dynamic_island_height_scale_title">Höhenskalierung</string>
+    <string name="dynamic_island_height_scale_summary">Vertikale Größe des Dynamic-Island-Chips skalieren</string>
     <string name="dynamic_island_footer_title">Über Dynamic Island</string>
     <string name="dynamic_island_intro">Dynamic Island bringt laufende Aktivitäten an den Kameraausschnitt.\n\nMusik steuern, Bildschirmaufnahmen verfolgen, Taschenlampe bedienen, Live-Ergebnisse folgen und Anrufe sowie Downloads oben auf dem Bildschirm behalten, ohne zu stören.</string>
     <string name="dynamic_island_features_title">Funktionen</string>

@@ -96,6 +96,12 @@ class DynamicIslandSettings : SettingsPreferenceFragment() {
                 110,
                 UserHandle.USER_CURRENT,
             )
+            Settings.System.putIntForUser(
+                resolver,
+                Settings.System.STATUS_BAR_DYNAMIC_ISLAND_HEIGHT_SCALE,
+                100,
+                UserHandle.USER_CURRENT,
+            )
         }
 
         @JvmField
